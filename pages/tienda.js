@@ -1,13 +1,43 @@
-import Link from "next/link";
 import Layout from "@/components/layout";
+import Guitarra from "@/components/guitarra";
+import styles from "@/styles/grid.module.css";
 
-export default function Tienda() {
+export default function Tienda({ guitarras }) {
     return (
         <Layout
             title={'Tienda'}
             description={'Tienda virtual, venta de guitarras y más'}
         >
-            <h1>Desde Tienda.js</h1>
+            <main className="contenedor">
+                <h1 className="heading">Nuestra colección</h1>
+                <div className={styles.grid}>
+                    {guitarras?.map(guitarra => (
+                        <Guitarra key={guitarra.id} guitarra={guitarra.attributes} />
+                    ))}
+                </div>
+            </main>
         </Layout>
     )
+}
+
+// Primero se ejecutan en el servidor y luego se ejecuta el componente (client-side)
+// export async function getStaticProps() {
+//     const respuesta = await fetch(`${process.env.API_URL}/guitarras?populate=imagen`);
+//     const { data: guitarras } = await respuesta.json();
+//     return {
+//         props: {
+//             guitarras,
+//         },
+//     };
+// }
+
+// Ventaja: escucha cambios en el servidor y actualiza la página
+export async function getServerSideProps() {
+    const respuesta = await fetch(`${process.env.API_URL}/guitarras?populate=imagen`);
+    const { data: guitarras } = await respuesta.json();
+    return {
+        props: {
+            guitarras,
+        },
+    };
 }

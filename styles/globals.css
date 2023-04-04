@@ -36,3 +36,23 @@ main {
   color: var(--primary);
   margin: 2rem 0;
 }
+
+.error {
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.error-enlace {
+  font-size: 1.8rem;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: var(--primary);
+  margin: 2rem 0;
+}
+
+.error-enlace:hover {
+  color: var(--black);
+}
