@@ -56,3 +56,7 @@ main {
 .error-enlace:hover {
   color: var(--black);
 }
+
+.mt-3 {
+  margin-top: 3rem;
+}
