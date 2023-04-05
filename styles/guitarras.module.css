@@ -44,3 +44,42 @@
 .enlace:hover {
     background-color: var(--primary);
 }
+
+.formulario {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario label {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.formulario select {
+    padding: 1rem;
+    border: 1px solid #e1e1e1;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.formulario input[type="submit"] {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 1rem;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    transition-property: background-color;
+    transition-duration: 300ms;
+}
+
+.formulario input[type="submit"]:hover {
+    background-color: var(--primary);
+    color: var(--white);
+    cursor: pointer;
+}
